@@ -1,0 +1,18 @@
+  .container {
+    background-color: rgba(227, 227, 228, 0.911);
+    max-height: fit-content;
+    align-self: center;
+  }
+  
+  .sendButton {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  .cards {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+  }
+  
