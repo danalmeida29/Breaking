@@ -1,9 +1,12 @@
 export interface ListPersonagens {
-    id:[null];
+    id:Number;
     name: string;
-    img: [null];
     birthday: string;
-    occupation: [null]; //seria um array
+    occupation: Array<any>;
+    img: string; 
     status: string;
-
+    nickname: string;
+    appearance: Array <any>;
+    portrayed: string;
+    category: Array <any>;
 }

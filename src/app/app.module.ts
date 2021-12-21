@@ -7,13 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopoComponent } from './Pages/topo/topo.component';
 import { CardsComponent } from './Pages/cards/cards.component';
+
 import { DemoMaterialModule } from './material-module';
+import { HomeComponent } from './Pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
-    CardsComponent
+    CardsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
