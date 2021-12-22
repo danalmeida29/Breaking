@@ -3,6 +3,10 @@
     max-height: fit-content;
     align-self: center;
   }
+
+  .stick {
+    max-width: 80%;
+  }
   
   .sendButton {
     margin-left: 5px;
@@ -16,3 +20,22 @@
     flex-flow: wrap;
   }
   
+  .title{
+    font-weight: 700;
+    margin: 0;
+    height: fit-content;
+  }
+  
+                                              /*<<<<<<<<<<<<<<<<<<<<< ----- >>>>>>>>>>>>>>>>>>>>>>>>>*/
+  .personagensName {
+    margin: 0;
+    padding: 0;
+    text-overflow: ellipsis;overflow: hidden;max-width: auto;white-space: nowrap;
+  }
+
+  .infoGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+  }
+
