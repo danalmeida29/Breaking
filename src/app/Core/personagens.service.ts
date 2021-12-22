@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BASE_URL } from './app.api';
+import { ListPersonagens } from '../Pages/cards/listPersonagens';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,6 @@ export class PersonagensService {
 
   getList(){
     var urlString = `${BASE_URL}characters/`
-    return this.http.get(urlString);
+    return this.http.get<ListPersonagens[]>(urlString);
   }
 }

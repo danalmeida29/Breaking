@@ -1,3 +1,25 @@
-<div class="container">
+<!--div class="container">
+
     <app-cards></app-cards>
-</div>
+</div-->
+
+<div class="container">
+
+    <div  class="stick">
+        <mat-card class="card" *ngFor="let personagem of personagens">
+            <mat-card-header>
+              <div mat-card-avatar class="header-image"></div>
+              <mat-card-title>{{personagem.name}}</mat-card-title>
+              <mat-card-subtitle>{{personagem.nickname}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <div class="title">Aniversario: {{personagem.birthday}}</div>
+              <div class="title">Status: {{personagem.status}}</div>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" >Ver Mais</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>
