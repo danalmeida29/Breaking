@@ -9,8 +9,9 @@ import { ListPersonagens } from '../cards/listPersonagens';
 })
 export class HomeComponent implements OnInit {
 
-  personagens!: ListPersonagens[];
-
+  // personagens!: ListPersonagens[];
+  personagens:any;
+  
   users = [
     { id: 1, name: 'João', apelido: 'Joãozinho', idade: 25},
     { id: 2, name: 'Gabriela', apelido: 'Gabi', idade: 22},
@@ -22,7 +23,13 @@ export class HomeComponent implements OnInit {
   constructor(private service: PersonagensService) { }
 
   ngOnInit(): void {
-    this.service.getList().subscribe(console.log);
+    this.service.getList().subscribe(
+      (res:any)=>{
+        console.log(res);
+        this.personagens = res;
+        
+      }
+    );
   }
 
 }
