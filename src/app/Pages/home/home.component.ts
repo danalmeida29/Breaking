@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonagensService } from 'src/app/Core/personagens.service';
 import { ListPersonagens } from '../cards/listPersonagens';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   // personagens!: ListPersonagens[];
   personagens:any;
+  erro: any;
   
   users = [
     { id: 1, name: 'João', apelido: 'Joãozinho', idade: 25},
@@ -20,16 +22,25 @@ export class HomeComponent implements OnInit {
     { id: 5, name: 'Jhony', apelido: 'Bravo', idade: 30},
   ];
 
-  constructor(private service: PersonagensService) { }
+  constructor(
+    private service: PersonagensService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.service.getList().subscribe(
       (res:any)=>{
         console.log(res);
         this.personagens = res;
-        
+      },
+      (error: any) => {
+        this.erro = error;
       }
     );
+  }
+
+  onNavigateTo(pageName:any){
+    this.router.navigate([`/${pageName}`]);
   }
 
 }

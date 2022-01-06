@@ -12,13 +12,15 @@
               <mat-card-title>{{personagem.name}}</mat-card-title>
               <mat-card-subtitle>{{personagem.nickname}}</mat-card-subtitle>
             </mat-card-header>
-            <img mat-card-image src={{personagem.img}} alt="Photo of a Shiba Inu">
+            <div class="Foto">
+              <img mat-card-image src={{personagem.img}} alt="Photo of a Shiba Inu">
+            </div>
             <mat-card-content>
               <div class="title">Aniversario: {{personagem.birthday}}</div>
               <div class="title">Status: {{personagem.status}}</div>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button color="primary" >Ver Mais</button>
+              <button class="sendButton" mat-raised-button (click)="onNavigateTo('/cards')">Ver Mais</button>
             </mat-card-actions>
           </mat-card>
     </div>

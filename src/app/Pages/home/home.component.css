@@ -1,9 +1,26 @@
+.container{
+  border: 10px solid rgb(0, 255, 179);
+}
+
+
+.stick {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 3px solid red;
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+
+}
+
 .card {
-  max-width: 400px;
-  margin-left: 20px;
-  border-color: black;
-  border-width: 10px;
-  background-color: whitesmoke;
+  width: 25%;
+  height: 25%;
+  border: 1px solid rgb(212, 0, 255);
+  background-color: #D3D3D3;
+  margin-left: 25px;
+ 
 }
 
 .header-image {
@@ -12,13 +29,23 @@
 }
 
 .title{
-  font-weight: 350;
+  border-color: 5px solid blue;
+  font-weight: 350px;
   margin: 0;
   height: fit-content;
 }
 
-
-.stick {
-  display:flex;
-  background-color: grey;
+.sendButton {
+  background-color: #778899;
+  margin-left: 5px;
+  margin-top: 5px;
 }
+
+.Foto{
+  width: 95%;
+  height: 80%;
+  margin-left: 10px;
+  max-height: 50%;
+  margin-block-start: 25px;
+}
+
