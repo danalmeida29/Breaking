@@ -14,4 +14,11 @@ export class PersonagensService {
     console.log(urlString);
     return this.http.get(urlString);
   }
+
+  getCharacterId(id:any){
+    var urlString = `${BASE_URL}characters/${id}`;
+    console.log(urlString);
+    return this.http.get(urlString);
+}
+
 }

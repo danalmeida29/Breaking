@@ -5,6 +5,11 @@
 
 <div class="container">
 
+    <!--mat-form-field class= "busca" appearance="standard">
+      <mat-label>Buscar personagens</mat-label>
+    </mat-form-field-->
+
+
     <div  class="stick">
         <mat-card class="card" *ngFor="let personagem of personagens">
             <mat-card-header>
@@ -20,7 +25,7 @@
               <div class="title">Status: {{personagem.status}}</div>
             </mat-card-content>
             <mat-card-actions>
-              <button class="sendButton" mat-raised-button (click)="onNavigateTo('/cards')">Ver Mais</button>
+              <button  (click)="onNavigateTo('/CardsDetalhes',personagem.id)" mat-button >Ver Mais</button>
             </mat-card-actions>
           </mat-card>
     </div>

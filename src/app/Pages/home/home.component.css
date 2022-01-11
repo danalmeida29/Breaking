@@ -2,6 +2,11 @@
   border: 10px solid rgb(0, 255, 179);
 }
 
+.busca{
+  font-size: 14px;
+  width: 50%;
+}
+
 
 .stick {
   display: flex;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { PersonagensService } from 'src/app/Core/personagens.service';
 
 @Component({
   selector: 'app-cards',
@@ -7,17 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
+  CharactersId: any;
+  erro: any;
 
-  personagem = [
-    { id: 1, name: 'João', apelido: 'Joãozinho', idade: 25},
-    { id: 2, name: 'Gabriela', apelido: 'Gabi', idade: 22},
-    { id: 3, name: 'Samira', apelido: 'Robin', idade: 21},
-    { id: 4, name: 'Carlos', apelido: 'Carlito', idade: 23},
-    { id: 5, name: 'Jhony', apelido: 'Bravo', idade: 30},
-  ];
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute, private personagensService: PersonagensService,) { }
 
   ngOnInit(): void {
-  }
+    this.CharactersId = this.route.snapshot.paramMap.get("id")
+    this.personagensService.getCharacterId(this.CharactersId).subscribe(
+        (res: any) => {
+            console.log(res.data);
+    }); }
 
 }
