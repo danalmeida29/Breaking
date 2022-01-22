@@ -1,31 +1,20 @@
 .container{
-  border: 10px solid rgb(0, 255, 179);
-}
-
-.busca{
-  font-size: 14px;
-  width: 50%;
-}
-
-
-.stick {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  border: 3px solid red;
-  background-color: grey;
+  background-color:gainsboro ;
   width: 100%;
-  height: 100%;
+  margin: auto;
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
 
 }
 
 .card {
-  width: 25%;
-  height: 25%;
-  border: 1px solid rgb(212, 0, 255);
-  background-color: #D3D3D3;
-  margin-left: 25px;
- 
+  background-color:rgb(85, 102, 78) ;
+  max-width: 200px;
+  min-width: 100px;
+  margin: 2em;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .header-image {
@@ -41,16 +30,29 @@
 }
 
 .sendButton {
-  background-color: #778899;
+  background-color: rgb(255, 255, 255);
   margin-left: 5px;
   margin-top: 5px;
 }
 
 .Foto{
-  width: 95%;
-  height: 80%;
-  margin-left: 10px;
-  max-height: 50%;
-  margin-block-start: 25px;
+  width: 200px;
+  height: 350px;
+  margin-left: auto;
+  margin-block-start: 20px;
 }
+
+.mat-card-image:first-child {
+  margin-top: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+}
+
+.mat-card-image {
+  width: calc(100% + 0px);
+  margin: 0px;
+}
+
 

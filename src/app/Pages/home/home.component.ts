@@ -33,12 +33,13 @@ export class HomeComponent implements OnInit {
   }
 
   onNavigateTo(pageName: any, CharactersId?: any) {
+    console.log('Id do personagem', CharactersId);
     if (CharactersId !== null){
       const CharacterNavigationInfo: NavigationExtras = {state:{id:CharactersId}}
-      this.router.navigate([`/${pageName}`, CharacterNavigationInfo.state]);
+      this.router.navigate([`${pageName}/${CharactersId}`]);
     }
     else
-      this.router.navigate([`/${pageName}`]);
+    this.router.navigate([`${pageName}`]);
   }
 
   

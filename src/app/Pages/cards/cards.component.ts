@@ -18,7 +18,7 @@ export class CardsComponent implements OnInit {
     this.CharactersId = this.route.snapshot.paramMap.get("id")
     this.personagensService.getCharacterId(this.CharactersId).subscribe(
         (res: any) => {
-            console.log(res.data);
+            console.log(res);
     }); }
 
 }
