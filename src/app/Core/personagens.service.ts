@@ -10,13 +10,13 @@ export class PersonagensService {
   constructor(private http: HttpClient) {}
 
   getList(){
-    var urlString = `${BASE_URL}characters/`
+    var urlString = `${BASE_URL}`
     console.log(urlString);
     return this.http.get(urlString);
   }
 
   getCharacterId(id:any){
-    var urlString = `${BASE_URL}characters/${id}`;
+    var urlString = `${BASE_URL}/${id}`;
     console.log(urlString);
     return this.http.get(urlString);
 }

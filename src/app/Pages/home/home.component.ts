@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { PersonagensService } from 'src/app/Core/personagens.service';
 import { ListPersonagens } from '../cards/listPersonagens';
 import { NavigationExtras, Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { map } from 'rxjs';
+
 
 @Component({
   selector: 'app-home',
@@ -10,17 +13,23 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+
   // personagens!: ListPersonagens[];
   personagens:any;
   erro: any;
   dataSource: any;
+  formGroupPesquisa!: FormGroup;
 
   constructor(
     private service: PersonagensService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
     ) { }
 
+
+
   ngOnInit(): void {
+
     this.service.getList().subscribe(
       (res:any)=>{
         console.log(res);
@@ -30,6 +39,19 @@ export class HomeComponent implements OnInit {
         this.erro = error;
       }
     );
+
+    this.formGroupPesquisa = this.formBuilder.group({
+      name: [null],
+    });
+
+    const queryAdicional = new Map();
+    if (this.formGroupPesquisa.value.name){
+      queryAdicional.set("name", this.formGroupPesquisa.value.name);
+    }
+  }
+
+  limparPesquisa(){
+    this.formGroupPesquisa.reset();
   }
 
   onNavigateTo(pageName: any, CharactersId?: any) {
@@ -41,11 +63,5 @@ export class HomeComponent implements OnInit {
     else
     this.router.navigate([`${pageName}`]);
   }
-
-  
- /* applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }*/
 
 }

@@ -9,6 +9,7 @@ import { PersonagensService } from 'src/app/Core/personagens.service';
 })
 export class CardsComponent implements OnInit {
 
+  ListPersonagens:any;
   CharactersId: any;
   erro: any;
 
@@ -19,6 +20,7 @@ export class CardsComponent implements OnInit {
     this.personagensService.getCharacterId(this.CharactersId).subscribe(
         (res: any) => {
             console.log(res);
+            this.ListPersonagens = res.data;
     }); }
 
 }
