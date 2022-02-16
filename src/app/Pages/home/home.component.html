@@ -1,20 +1,20 @@
 <div class="container">
 
-  <form class="pesquisa">
+  <!--form class="pesquisa">
     <mat-form-field>
       <input matInput placeholder="Name" formControlName="name" autocomplete="off" />
     </mat-form-field>
 
     <button mat-raised-button color="primary">Pesquisar</button>
     <button  mat-raised-button type="button" color="secondary" (click)="limparPesquisa()">Limpar</button>
-  </form>
+  </form-->
 
   <!---------------------------------------------------------------------------// * \\-------------------------------------------------------------------------------->
   
   <mat-card class="card" *ngFor="let personagem of personagens">
     <mat-card-header>
       <div mat-card-avatar class="header-image"></div>
-      <mat-card-title>{{personagem.name}}</mat-card-title>
+      <mat-card-title style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{personagem.name}}</mat-card-title>
       <mat-card-subtitle>{{personagem.nickname}}</mat-card-subtitle>
     </mat-card-header>
     <div class="Foto">

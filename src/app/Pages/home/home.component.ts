@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonagensService } from 'src/app/Core/personagens.service';
-import { ListPersonagens } from '../cards/listPersonagens';
 import { NavigationExtras, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { map } from 'rxjs';
 
 
 @Component({
@@ -14,7 +12,7 @@ import { map } from 'rxjs';
 export class HomeComponent implements OnInit {
 
 
-  // personagens!: ListPersonagens[];
+
   personagens:any;
   erro: any;
   dataSource: any;
@@ -40,19 +38,19 @@ export class HomeComponent implements OnInit {
       }
     );
 
-    this.formGroupPesquisa = this.formBuilder.group({
+    /*this.formGroupPesquisa = this.formBuilder.group({
       name: [null],
     });
 
     const queryAdicional = new Map();
     if (this.formGroupPesquisa.value.name){
       queryAdicional.set("name", this.formGroupPesquisa.value.name);
-    }
+    }*/
   }
 
-  limparPesquisa(){
+  /*limparPesquisa(){
     this.formGroupPesquisa.reset();
-  }
+  }*/
 
   onNavigateTo(pageName: any, CharactersId?: any) {
     console.log('Id do personagem', CharactersId);

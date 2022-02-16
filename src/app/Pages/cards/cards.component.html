@@ -1,12 +1,21 @@
-<div class="container"> 
+<div class="container" > 
   <mat-card class="example-card">
     <mat-card-title-group>
-      <mat-card-title>Nome</mat-card-title>
-      <mat-card-subtitle>Apelido</mat-card-subtitle>
-      <img mat-card-xl-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      <mat-card-title>Name: {{Character.name}}</mat-card-title>
+      <mat-card-subtitle>Nickname: {{Character.nickname}}</mat-card-subtitle>
+      <div class=".Foto">
+         <img mat-card-xl-image src="{{Character.img}}" >
+      </div>
+     
+
     </mat-card-title-group>
     <mat-card-content>
-      
+      <p>Birthday: {{Character.birthday}}</p>
+      <p>Occupation: {{Character.occupation}}</p>
+      <p>Status: {{Character.status}}</p>
+      <p>Appearance: {{Character.appearance}}</p>
+      <p>Category: {{Character.category}}</p>
+      <p>Portrayed: {{Character.portrayed}}</p>
     </mat-card-content>
   </mat-card>
 </div>

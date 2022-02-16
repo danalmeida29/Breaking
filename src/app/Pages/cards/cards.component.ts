@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PersonagensService } from 'src/app/Core/personagens.service';
+import { Character } from './Character';
+
 
 @Component({
   selector: 'app-cards',
@@ -9,18 +11,23 @@ import { PersonagensService } from 'src/app/Core/personagens.service';
 })
 export class CardsComponent implements OnInit {
 
-  ListPersonagens:any;
+
   CharactersId: any;
   erro: any;
+  Character: any;
 
   constructor(private router: Router, private route: ActivatedRoute, private personagensService: PersonagensService,) { }
 
   ngOnInit(): void {
+    this.Character = [];
     this.CharactersId = this.route.snapshot.paramMap.get("id")
+    console.log(this.CharactersId);
     this.personagensService.getCharacterId(this.CharactersId).subscribe(
         (res: any) => {
             console.log(res);
-            this.ListPersonagens = res.data;
-    }); }
+            this.Character = res[0];      
+    }); 
+    
+  }
 
 }

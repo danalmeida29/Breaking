@@ -1,4 +1,4 @@
-export interface ListPersonagens {
+export interface Character {
     id:Number;
     name: string;
     birthday: string;
